@@ -34,7 +34,14 @@
     user:
       name: aijan
       group: kaizen
-      append: yes       
+      append: yes 
+
+  - name: Add user aijan and add to qa group
+    user:
+      name: aijan
+      group: qa
+      append: yes 
+               
 
   - name: Add user tester and add to qa group
     user:
