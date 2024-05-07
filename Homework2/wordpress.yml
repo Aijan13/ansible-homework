@@ -1,0 +1,21 @@
+- name: Download wordpress
+  get_url: 
+    url: https://wordpress.org/latest.tar.gz
+    dest: /tmp/latest.tar.gz
+
+- name: Extract file
+  unarchive:
+    src: /tmp/latest.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Move WordPress files to the web directory
+  command: mv /tmp/wordpress/* /var/www/html/
+
+- name: Set proper ownership
+  file:
+    path: /var/www/html/
+    owner: apache
+    group: apache
+    remote_src: yes
+

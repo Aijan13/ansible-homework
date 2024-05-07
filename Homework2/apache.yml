@@ -1,0 +1,11 @@
+- name: Install apache
+  yum:
+    name: httpd
+    state: present
+     
+
+- name: Restart httpd and enable
+  systemd:
+    name: httpd
+    state: restarted
+    enabled: yes
