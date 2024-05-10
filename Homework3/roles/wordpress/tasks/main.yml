@@ -18,10 +18,10 @@
     mode: '0755'
     remote_src: yes
 
-# - name: Template a file to html                                  #this part is giving me error
-#   template:                    
-#     src: roles/wordpress/templates/wp-config-sample.php.j2
-#     dest: /var/www/html/wp-config.php
+- name: Template a file to html                                 
+  template:                    
+    src: roles/wordpress/template/wp-config-sample.php.j2
+    dest: /var/www/html/wp-config.php
 
 # handlers:   
 - name: Restart Apache
